@@ -3,26 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 3</title>
+    <title>Comment Page</title>
+    <style>
+        /* Style to add a border to the image */
+        img {
+            border: 3px solid black;
+        }
+    </style>
 </head>
 <body>
-    <h1>Task 3</h1>
-<h1>List</h1>
-    
-    <!-- Unordered List -->
-    <h2>Unordered List:</h2>
-    <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-    </ul>
+    <h1>I am Internal Text</h1>
 
-    <!-- Ordered List -->
-    <h2>Ordered List:</h2>
-    <ol>
-        <li>First Item</li>
-        <li>Second Item</li>
-        <li>Third Item</li>
-    </ol>
+    <!-- Image with specified attributes -->
+    <img src="https://clipart-library.com/images/di9rddBnT.jpg" alt="Image" width="30" height="30" title="I am Image in Webpage">
+
+    <!-- External content will be displayed here -->
+    <div id="externalContent"></div>
+
+    <script>
+        // Load external content from IIncluded.html
+        fetch('IIncluded.html')
+            .then(response => response.text())
+            .then(text => {
+                // Display external content
+                document.getElementById('externalContent').innerHTML = text;
+            })
+            .catch(error => console.error('Error fetching external content:', error));
+    </script>
 </body>
 </html>
